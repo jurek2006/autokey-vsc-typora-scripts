@@ -2,8 +2,29 @@
 # Należy go umieścić w ~/.config/autokey/data
 import time
 
-keyboard.send_keys("```javascript")
+programName = "- Visual Studio Code"
+filenameEndMarkup = "[/title]" #znacznik końca nazwy pliku dołączanej przed treścią zaznaczenia
+headingMarkup = "##### " #znacznik (markup) stosowany do nazwy wklejanego pliku
+
+
+fromclipboard = clipboard.get_clipboard()
+
+title = headingMarkup + fromclipboard[0:fromclipboard.find(programName)].strip() # wyodrębnienie tytułu (i dodanie do niego znacznika headingu)
+code = fromclipboard[fromclipboard.find(programName) + len(programName) + len(filenameEndMarkup):] # wyodrębnienie kodu (bez tytułu i znacznika końca tytułu)
+
+clipboard.fill_clipboard(title) #wysłanie do schowka nazwy pliku
+keyboard.send_keys("<ctrl>+v")
 keyboard.send_key("<enter>")
 
 time.sleep(0.25)
-keyboard.send_keys(" <ctrl>+v")
+
+keyboard.send_keys("```javascript")
+keyboard.send_key("<enter>")
+
+clipboard.fill_clipboard(code) #wysłanie do schowka kopiowanego kodu
+
+time.sleep(0.25)
+keyboard.send_keys("<ctrl>+v")
+
+time.sleep(0.25) #wysłanie do schowka ponownie całości kopiowanego schowka
+clipboard.fill_clipboard(fromclipboard)
