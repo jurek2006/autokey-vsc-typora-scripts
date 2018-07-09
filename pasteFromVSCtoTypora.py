@@ -21,10 +21,13 @@ time.sleep(0.25)
 keyboard.send_keys("```javascript")
 keyboard.send_key("<enter>")
 
-clipboard.fill_clipboard(code) #wysłanie do schowka kopiowanego kodu
-
 time.sleep(0.25)
+
+clipboard.fill_clipboard(code) #wysłanie do schowka kopiowanego kodu
+# dialog.info_dialog("Test", "test '%s'." % ('Testowy'))
+
+time.sleep(0.5)
 keyboard.send_keys("<ctrl>+v")
 
-time.sleep(0.25) #wysłanie do schowka ponownie całości kopiowanego schowka
-clipboard.fill_clipboard(fromclipboard)
+# time.sleep(0.25) #wysłanie do schowka ponownie całości kopiowanego schowka
+# clipboard.fill_clipboard(fromclipboard)
