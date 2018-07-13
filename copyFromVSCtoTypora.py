@@ -8,6 +8,10 @@ filenameEndMarkup = "[/title]" #znacznik końca nazwy pliku dołączanej przed t
 snippetStart = "...\n" #znacznik dodawany przed fragmentem kopiowanego kodu 
 snippetEnd = "\n..." #znacznik dodawany po fragmencie kopiowanego kodu 
 
+# zapisanie aktywnego okna (ctrl + s)
+keyboard.send_keys("<ctrl>+s")
+time.sleep(0.25)
+
 winTitle = window.get_active_title() #pobranie tytułu okna w którym uruchomiono skrypt
 selection = clipboard.get_selection()
 

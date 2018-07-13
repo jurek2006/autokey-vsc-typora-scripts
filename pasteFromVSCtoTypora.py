@@ -4,7 +4,7 @@ import time
 
 programName = "- Visual Studio Code"
 filenameEndMarkup = "[/title]" #znacznik końca nazwy pliku dołączanej przed treścią zaznaczenia
-headingMarkup = "##### " #znacznik (markup) stosowany do nazwy wklejanego pliku
+headingMarkup = "###### " #znacznik (markup) stosowany do nazwy wklejanego pliku
 
 
 fromclipboard = clipboard.get_clipboard()
